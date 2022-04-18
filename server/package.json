@@ -1,0 +1,13 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "Server for WebRTC project",
+  "main": "dist/index.js",
+  "author": "Prince Narteh",
+  "license": "MIT",
+  "devDependencies": {
+    "ts-node-dev": "^1.1.8",
+    "tslint": "^6.1.3",
+    "typescript": "^4.6.3"
+  }
+}
