@@ -1,15 +1,11 @@
 import React, { useEffect } from "react";
-import socketIO from "socket.io-client";
-
-const ws = "http://localhost:4000";
+import Join from "./components/JoinButton";
 
 function App() {
-  useEffect(() => {
-    socketIO(ws);
-  });
+  useEffect(() => {});
   return (
-    <div>
-      <h1>WebRTC Video App</h1>
+    <div className="min-h-screen flex items-center justify-center">
+      <Join />
     </div>
   );
 }
