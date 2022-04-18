@@ -10,7 +10,8 @@
     "build": "tsc",
     "watch": "tsc -w",
     "prestart": "yarn build",
-    "start": "concurrently --kill-others \"yarn watch\" \"nodemon  .\""
+    "start": "nodemon .",
+    "dev": "concurrently --kill-others \"yarn watch\" \"yarn start\""
   },
   "devDependencies": {
     "nodemon": "^2.0.15",
