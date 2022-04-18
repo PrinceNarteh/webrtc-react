@@ -1,4 +1,4 @@
-import { createContext, ReactNode } from "react";
+import { createContext, ReactNode, useContext } from "react";
 import socketIO, { Socket } from "socket.io-client";
 const url = "http://localhost:4000" as string;
 const ws = socketIO(url);
@@ -12,4 +12,6 @@ function RoomContextProvider({ children }: { children: ReactNode }) {
   return <RoomContext.Provider value={{ ws }}>{children}</RoomContext.Provider>;
 }
 
-export { RoomContext, RoomContextProvider };
+const useRoomContext = () => useContext(RoomContext);
+
+export { RoomContext, RoomContextProvider, useRoomContext };

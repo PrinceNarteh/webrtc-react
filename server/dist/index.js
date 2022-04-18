@@ -18,7 +18,7 @@ const io = new socket_io_1.Server(httpServer, {
     },
 });
 io.on("connection", (socket) => {
-    console.log("User is connected");
+    console.log("User is connected", socket.id);
     socket.on("disconnect", () => {
         console.log("User disconnected");
     });
