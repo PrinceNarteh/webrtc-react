@@ -1,12 +1,8 @@
 import React from "react";
-import CreateRoom from "./components/CreateRoom";
+import Router from "./Router";
 
 function App() {
-  return (
-    <div className="min-h-screen flex items-center justify-center">
-      <CreateRoom />
-    </div>
-  );
+  return <Router />;
 }
 
 export default App;

@@ -18,15 +18,15 @@ export class RoomController {
 
   @OnMessage("create-room")
   @EmitOnSuccess("create-room_success")
-  createRoom(@ConnectedSocket() socket: Socket) {
+  createRoom() {
     const roomId = uuid();
-    socket.join(roomId);
-
     return { roomId };
   }
 
   @OnMessage("join-room")
-  joinRoom(@MessageBody() body: string) {
+  joinRoom(@MessageBody() body: any, @ConnectedSocket() socket: Socket) {
+    const { roomId } = body;
+    socket.join(roomId);
     console.log("You joined the room", body);
   }
 }
