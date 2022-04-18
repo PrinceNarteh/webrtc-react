@@ -1,21 +1,21 @@
 import React from "react";
 import { useRoomContext } from "../context/roomContext";
 
-const Join = () => {
+const CreateRoom = () => {
   const { ws } = useRoomContext();
 
-  const joinRoom = () => {
-    ws.emit("join-room", "hello");
+  const createRoom = () => {
+    ws.emit("create-room");
   };
 
   return (
     <button
-      onClick={joinRoom}
+      onClick={createRoom}
       className="bg-teal-500 py-2 px-4 rounded-md text-white hover:bg-teal-600"
     >
-      Start Meeting
+      Start New Meeting
     </button>
   );
 };
 
-export default Join;
+export default CreateRoom;

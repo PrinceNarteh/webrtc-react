@@ -6,8 +6,8 @@ const PORT = process.env.PORT || 4000;
 
 const httpServer = createServer(appServer);
 
-socketServer(httpServer);
-
 httpServer.listen(PORT, () => {
   console.log(`🚀 Server running on port ${PORT}`);
 });
+
+socketServer(httpServer);
