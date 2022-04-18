@@ -5,7 +5,7 @@ const Join = () => {
   const { ws } = useRoomContext();
 
   const joinRoom = () => {
-    ws.emit("joinRoom");
+    ws.emit("join-room", "hello");
   };
 
   return (
