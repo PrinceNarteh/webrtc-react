@@ -1,13 +1,15 @@
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { useRoomContext } from "../context/roomContext";
+import { useRoomContext } from "../hooks/useRoomContext";
 
 const Room = () => {
-  const { ws } = useRoomContext();
+  const { ws, me } = useRoomContext();
   const { roomId } = useParams();
 
   useEffect(() => {
-    ws.emit("join-room", { roomId });
+    if (me) {
+      ws.emit("join-room", { roomId, peerId: me.id });
+    }
   }, []);
 
   return <div>Room - {roomId}</div>;
